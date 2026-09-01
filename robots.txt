@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brincandonarede.com.br/sitemap.xml
