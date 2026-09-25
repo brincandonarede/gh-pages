@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança de APIs: 5 falhas que colocam integrações em risco - Brincando na Rede</title>
+    <meta name="description" content="">
+    
+    
+    
+    <link rel="icon" href="/static/uploads/cropped-cropped-images1.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/static/uploads/cropped-cropped-images1.png">
+    
+    
+    <!-- Bootstrap CSS (Necessário para os blocos do CMS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/themes/crazystack/assets/css/style.css?v=2.1">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <a href="/" class="logo">
+            <span class="cursor"></span>
+            Brincando na Rede
+        </a>
+        <nav style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none;">
+            
+            <ul class="nav-links" style="display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0; align-items: center;">
+                
+                    <li><a href="/"><i class="bi bi-house"></i> Início</a></li>
+                    
+                    
+                    <li><a href="/categoria/blog/">Blog</a></li>
+                    
+                    <li><a href="/categoria/brincando-com-hardware/">Brincando com Hardware</a></li>
+                    
+                    <li><a href="/categoria/comunidade-e-dicas/">Comunidade e Dicas</a></li>
+                    
+                    <li><a href="/categoria/desenvolvendo-e-codificando/">Desenvolvendo e Codificando</a></li>
+                    
+                    <li><a href="/categoria/explorando-o-mundo-digital/">Explorando o Mundo Digital</a></li>
+                    
+                    <li><a href="/categoria/novidades-e-tendencias/">Novidades e Tendências</a></li>
+                    
+                    <li><a href="/categoria/uncategorized/">Uncategorized</a></li>
+                    
+                    
+                    
+                    
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style>
+/* Esconde a scrollbar no nav mas permite scroll horizontal suave em telas pequenas */
+.header nav::-webkit-scrollbar {
+    display: none;
+}
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .header nav {
+        width: 100%;
+        padding-bottom: 0.5rem;
+    }
+}
+</style>
+
+
+<main class="container">
+<article class="post-layout">
+    
+    <div class="post-main">
+        <header class="post-header">
+            <div class="post-meta-top">
+                <i class="bi bi-calendar3"></i> 25/09/2026
+                
+                <span style="margin: 0 0.5rem; color: var(--border-color);">|</span>
+                <i class="bi bi-person"></i> Michael
+                
+            </div>
+            <h1>Segurança de APIs: 5 falhas que colocam integrações em risco</h1>
+        </header>
+        
+        
+        <img src="/static/uploads/seguranca-de-apis-5-falhas-que-colocam-integracoes-em-risco.webp?v=1790351099" alt="None" class="post-featured-image">
+        
+        
+        
+        
+        <div class="content">
+            <p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Em uma</span><a style="text-decoration: none;" href="https://sysmiddle.com.br/integracao-de-sistemas/"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #1155cc; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: underline; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">integra&ccedil;&atilde;o de sistemas</span></a><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">, a </span><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">seguran&ccedil;a de APIs</span><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> depende de controles que protejam requisi&ccedil;&otilde;es, identidades e recursos expostos. A API define quais dados podem ser consultados, alterados ou processados. Quando autentica&ccedil;&atilde;o, autoriza&ccedil;&atilde;o, limites de uso ou invent&aacute;rio falham, uma integra&ccedil;&atilde;o funcional pode se transformar em um ponto de acesso indevido, indisponibilidade ou exposi&ccedil;&atilde;o de informa&ccedil;&otilde;es.&nbsp;</span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Resumo</span></p>
+<ul style="margin-top: 0; margin-bottom: 0; padding-inline-start: 48px;">
+<li dir="ltr" style="list-style-type: disc; font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre;" aria-level="1">
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 0pt;" role="presentation"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Falhas de autoriza&ccedil;&atilde;o podem liberar objetos ou fun&ccedil;&otilde;es fora do n&iacute;vel de permiss&atilde;o.</span></p>
+</li>
+<li dir="ltr" style="list-style-type: disc; font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre;" aria-level="1">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;" role="presentation"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Autentica&ccedil;&atilde;o fr&aacute;gil aumenta o risco de uso indevido de credenciais e tokens.</span></p>
+</li>
+<li dir="ltr" style="list-style-type: disc; font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre;" aria-level="1">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;" role="presentation"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Aus&ecirc;ncia de limites de requisi&ccedil;&otilde;es pode afetar disponibilidade e custos.</span></p>
+</li>
+<li dir="ltr" style="list-style-type: disc; font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre;" aria-level="1">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 12pt;" role="presentation"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">APIs antigas ou mal documentadas ampliam a superf&iacute;cie de ataque.</span></p>
+</li>
+</ul>
+<h2 dir="ltr" style="line-height: 1.38; margin-top: 18pt; margin-bottom: 4pt;"><span style="font-size: 17pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Seguran&ccedil;a de APIs: cinco falhas que exigem aten&ccedil;&atilde;o</span></h2>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O OWASP API Security Top 10 transforma amea&ccedil;as recorrentes em pontos verific&aacute;veis durante desenvolvimento, testes e opera&ccedil;&atilde;o. Para integra&ccedil;&otilde;es, cinco falhas merecem aten&ccedil;&atilde;o por afetarem controle de acesso, identidade, consumo de recursos e visibilidade sobre o ambiente.</span></p>
+<div dir="ltr" style="margin-left: 0pt;" align="left">
+<table style="border: none; border-collapse: collapse;"><colgroup><col width="192"><col width="178"><col width="173"></colgroup>
+<tbody>
+<tr style="height: 25pt;">
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; text-align: center; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Falha</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; text-align: center; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Risco</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; text-align: center; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Controle</span></p>
+</td>
+</tr>
+<tr style="height: 38.5pt;">
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Autoriza&ccedil;&atilde;o por objeto quebrada</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Acesso a dados alheios</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Validar permiss&atilde;o por objeto</span></p>
+</td>
+</tr>
+<tr style="height: 38.5pt;">
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Autentica&ccedil;&atilde;o quebrada</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Uso indevido de identidade</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Proteger credenciais e tokens</span></p>
+</td>
+</tr>
+<tr style="height: 38.5pt;">
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Autoriza&ccedil;&atilde;o por propriedade quebrada</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Exposi&ccedil;&atilde;o de campos sens&iacute;veis</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Restringir propriedades por perfil</span></p>
+</td>
+</tr>
+<tr style="height: 38.5pt;">
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Consumo irrestrito de recursos</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Indisponibilidade e custos</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Aplicar rate limiting e cotas</span></p>
+</td>
+</tr>
+<tr style="height: 38.5pt;">
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Invent&aacute;rio inadequado</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Endpoints antigos expostos</span></p>
+</td>
+<td style="vertical-align: top; padding: 5pt 5pt 5pt 5pt; overflow: hidden; overflow-wrap: break-word; border: solid #000000 1pt;">
+<p dir="ltr" style="line-height: 1.38; margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Catalogar e desativar APIs</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">1. Autoriza&ccedil;&atilde;o por objeto quebrada</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">A falha BOLA ocorre quando a API recebe um identificador de objeto, mas n&atilde;o confirma se o usu&aacute;rio pode acessar aquele recurso. Alterar um ID pode permitir tentativas de consulta a dados de outra conta. A preven&ccedil;&atilde;o exige autoriza&ccedil;&atilde;o no servidor para toda opera&ccedil;&atilde;o. Uma integra&ccedil;&atilde;o via API deve tratar identidade e permiss&atilde;o como controles separados.</span></p>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">2. Autentica&ccedil;&atilde;o quebrada</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Chaves, tokens, senhas ou sess&otilde;es mal implementados podem fazer a API aceitar uma identidade inv&aacute;lida. H&aacute; uma diferen&ccedil;a entre autentica&ccedil;&atilde;o, que confirma quem faz a requisi&ccedil;&atilde;o, de autoriza&ccedil;&atilde;o, que determina o que essa identidade pode fazer. Expira&ccedil;&atilde;o de tokens, armazenamento seguro de segredos e rota&ccedil;&atilde;o de credenciais reduzem esse risco.</span></p>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">3. Autoriza&ccedil;&atilde;o por propriedade quebrada</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Mesmo quando o usu&aacute;rio pode acessar um objeto, nem todos os campos devem estar dispon&iacute;veis para leitura ou altera&ccedil;&atilde;o. Respostas podem expor dados internos, enquanto requisi&ccedil;&otilde;es podem aceitar propriedades controladas pelo servidor. Contratos de entrada e sa&iacute;da devem definir campos permitidos. A documenta&ccedil;&atilde;o de API ajuda a manter essas regras vis&iacute;veis para desenvolvimento e seguran&ccedil;a.</span></p>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">4. Consumo irrestrito de recursos</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Uma fun&ccedil;&atilde;o capaz de processar requisi&ccedil;&otilde;es sem limites pode ser explorada para gerar carga elevada, indisponibilidade ou custos externos. A Cloudflare aponta a limita&ccedil;&atilde;o de taxa como prote&ccedil;&atilde;o contra volumes excessivos. Al&eacute;m do rate limiting, a arquitetura deve definir tamanho m&aacute;ximo de payload, pagina&ccedil;&atilde;o, cotas, timeouts e limites para opera&ccedil;&otilde;es em lote.</span></p>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">5. Invent&aacute;rio inadequado de APIs</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Endpoints antigos, vers&otilde;es de teste e APIs sem respons&aacute;vel podem permanecer acess&iacute;veis sem necessidade. O problema de invent&aacute;rio dificulta corre&ccedil;&otilde;es e mant&eacute;m superf&iacute;cies que deveriam ter sido removidas. O versionamento de API deve vir acompanhado de cat&aacute;logo, propriet&aacute;rio, data de descontinua&ccedil;&atilde;o e monitoramento de uso.</span></p>
+<h2 dir="ltr" style="line-height: 1.38; margin-top: 18pt; margin-bottom: 4pt;"><span style="font-size: 17pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Como reduzir riscos antes que a integra&ccedil;&atilde;o chegue &agrave; produ&ccedil;&atilde;o?</span></h2>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Seguran&ccedil;a deve entrar no desenvolvimento desde o desenho da interface. Isso inclui modelar permiss&otilde;es, testar cen&aacute;rios negativos, validar esquemas e monitorar padr&otilde;es anormais.&nbsp;</span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">A estrat&eacute;gia tamb&eacute;m precisa cobrir o ciclo de vida. Uma API segura no lan&ccedil;amento pode acumular risco depois de mudan&ccedil;as ou vers&otilde;es mantidas por compatibilidade. Revis&otilde;es, testes automatizados e observabilidade ajudam a detectar desvios. Em ambientes com muitos sistemas, uma plataforma de integra&ccedil;&atilde;o pode facilitar padroniza&ccedil;&atilde;o, rastreabilidade e aplica&ccedil;&atilde;o consistente de pol&iacute;ticas.</span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Um exemplo pr&aacute;tico dessa abordagem aparece no case da SysMiddle com o Grupo Opty. A empresa implementou uma arquitetura centralizada de integra&ccedil;&atilde;o entre diferentes sistemas de sa&uacute;de, disponibilizando os dados de forma padronizada por meio da API REST Connect Health.&nbsp;</span></p>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O projeto reduziu em 85% o tempo de implanta&ccedil;&atilde;o das integra&ccedil;&otilde;es e tornou 100% automatizados os processos de confirma&ccedil;&atilde;o e cancelamento de consultas e exames, mostrando como padroniza&ccedil;&atilde;o, controle dos fluxos e automa&ccedil;&atilde;o podem sustentar integra&ccedil;&otilde;es de alta criticidade.</span></p>
+<h2 dir="ltr" style="line-height: 1.38; margin-top: 18pt; margin-bottom: 4pt;"><span style="font-size: 17pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Prote&ccedil;&atilde;o cont&iacute;nua &eacute; parte da arquitetura de integra&ccedil;&atilde;o</span></h2>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">A </span><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">seguran&ccedil;a de APIs</span><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> depende de autoriza&ccedil;&atilde;o por recurso, autentica&ccedil;&atilde;o confi&aacute;vel, exposi&ccedil;&atilde;o m&iacute;nima de dados, limites de consumo e invent&aacute;rio atualizado. Quanto mais integra&ccedil;&otilde;es existem, maior a necessidade de processos repet&iacute;veis e vis&iacute;veis. Para estruturar conex&otilde;es com governan&ccedil;a, monitoramento e suporte especializado, a</span><a style="text-decoration: none;" href="https://sysmiddle.com.br/?utm_source=sysmiddle_blog&amp;utm_medium=guest_post&amp;utm_campaign=sysmiddle&amp;utm_id=organic&amp;utm_term=BRINCANDO+NA+REDE&amp;utm_content=seguran%C3%A7a+de+apis%E2%80%8B"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;"> </span><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #1155cc; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: underline; -webkit-text-decoration-skip: none; text-decoration-skip-ink: none; vertical-align: baseline; white-space: pre-wrap;">equipe da SysMiddle pode avaliar o cen&aacute;rio de integra&ccedil;&atilde;o</span></a><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">.</span></p>
+<h2 dir="ltr" style="line-height: 1.38; margin-top: 18pt; margin-bottom: 4pt;"><span style="font-size: 17pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Perguntas frequentes (FAQ)</span></h2>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">As respostas abaixo esclarecem d&uacute;vidas recorrentes sobre prote&ccedil;&atilde;o de APIs.</span></p>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O que &eacute; seguran&ccedil;a de APIs?</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Seguran&ccedil;a de APIs &eacute; o conjunto de pr&aacute;ticas usadas para impedir acesso indevido, manipula&ccedil;&atilde;o de dados, abuso de funcionalidades e indisponibilidade em interfaces que conectam sistemas. Ela envolve autentica&ccedil;&atilde;o, autoriza&ccedil;&atilde;o, criptografia, valida&ccedil;&atilde;o de entradas e sa&iacute;das, limites de uso, monitoramento e gest&atilde;o do ciclo de vida das APIs.</span></p>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Qual &eacute; a diferen&ccedil;a entre autentica&ccedil;&atilde;o e autoriza&ccedil;&atilde;o em uma API?</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Autentica&ccedil;&atilde;o verifica quem est&aacute; realizando a requisi&ccedil;&atilde;o, por exemplo por meio de credenciais, certificados ou tokens. Autoriza&ccedil;&atilde;o verifica o que essa identidade pode acessar ou executar. Uma API pode autenticar corretamente um usu&aacute;rio e ainda assim ter falhas de autoriza&ccedil;&atilde;o caso permita acesso a objetos, campos ou fun&ccedil;&otilde;es fora do n&iacute;vel de permiss&atilde;o previsto.</span></p>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O que &eacute; BOLA em seguran&ccedil;a de APIs?</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">BOLA significa Broken Object Level Authorization. A falha ocorre quando a API recebe um identificador de objeto e n&atilde;o confirma corretamente se o solicitante tem permiss&atilde;o para acess&aacute;-lo. O risco &eacute; permitir leitura, altera&ccedil;&atilde;o ou exclus&atilde;o de recursos pertencentes a outros usu&aacute;rios. O controle deve ser realizado no servidor para cada objeto solicitado.</span></p>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Por que o rate limiting ajuda a proteger APIs?</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O rate limiting define quantas requisi&ccedil;&otilde;es um cliente pode realizar em determinado per&iacute;odo. Esse controle reduz a possibilidade de abuso automatizado, sobrecarga e consumo excessivo de recursos. Ele deve ser combinado com cotas, timeouts, limites de payload e monitoramento, porque diferentes opera&ccedil;&otilde;es podem ter custos e impactos distintos sobre a infraestrutura.</span></p>
+<h3 dir="ltr" style="line-height: 1.38; margin-top: 14pt; margin-bottom: 4pt;"><span style="font-size: 13pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: bold; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">Por que manter um invent&aacute;rio de APIs?</span></h3>
+<p dir="ltr" style="line-height: 1.38; margin-top: 12pt; margin-bottom: 12pt;"><span style="font-size: 11pt; font-family: Arial,sans-serif; color: #000000; background-color: transparent; font-weight: 400; font-style: normal; font-variant: normal; text-decoration: none; vertical-align: baseline; white-space: pre-wrap;">O invent&aacute;rio permite saber quais APIs est&atilde;o ativas, quem &eacute; respons&aacute;vel por elas, quais vers&otilde;es continuam expostas e quando devem ser descontinuadas. Sem essa visibilidade, endpoints antigos ou ambientes de teste podem permanecer acess&iacute;veis e sem manuten&ccedil;&atilde;o. Um cat&aacute;logo atualizado tamb&eacute;m fortalece a seguran&ccedil;a de APIs.</span></p>
+<p>&nbsp;</p>
+        </div>
+        
+        
+        
+        
+    </div>
+    
+    <aside class="post-sidebar">
+        <div class="sidebar-box">
+            <h3 class="sidebar-title">Mais Análises</h3>
+            <div style="display: flex; flex-direction: column;">
+                
+                
+                
+                
+                    <div class="sidebar-post">
+                        <a href="/estrategias-de-storytelling-para-alavancar-vendas-no-setor-tech/">
+                            
+                            <img src="/static/uploads/estrategias-de-storytelling-para-alavancar-vendas-no-setor-tech.jpg" alt="Estratégias de storytelling para alavancar vendas no setor tech" class="sidebar-post-img" loading="lazy">
+                            
+                        </a>
+                        <div>
+                            <h4 class="sidebar-post-title">
+                                <a href="/estrategias-de-storytelling-para-alavancar-vendas-no-setor-tech/" style="color: var(--text-main); transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">Estratégias de storytelling para alavancar vendas no setor tech</a>
+                            </h4>
+                            <span class="sidebar-post-date"><i class="bi bi-calendar3"></i> 16/09/2026</span>
+                        </div>
+                    </div>
+                
+                
+                
+                    <div class="sidebar-post">
+                        <a href="/melhor-tablet-samsung-o-guia-completo-para-acertar-na-escolha/">
+                            
+                            <img src="/static/uploads/melhor-tablet-samsung-o-guia-completo-para-acertar-na-escolha-thumb.webp?v=1788480936" alt="Melhor tablet Samsung: o guia completo para acertar na escolha" class="sidebar-post-img" loading="lazy">
+                            
+                        </a>
+                        <div>
+                            <h4 class="sidebar-post-title">
+                                <a href="/melhor-tablet-samsung-o-guia-completo-para-acertar-na-escolha/" style="color: var(--text-main); transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">Melhor tablet Samsung: o guia completo para acertar na escolha</a>
+                            </h4>
+                            <span class="sidebar-post-date"><i class="bi bi-calendar3"></i> 04/09/2026</span>
+                        </div>
+                    </div>
+                
+                
+                
+                    <div class="sidebar-post">
+                        <a href="/notebook-bom-para-estudar-o-guia-completo-para-acertar-na-escolha/">
+                            
+                            <img src="/static/uploads/notebook-bom-para-estudar-o-guia-completo-para-acertar-na-escolha-thumb.webp?v=1788479875" alt="Notebook bom para estudar: o guia completo para acertar na escolha" class="sidebar-post-img" loading="lazy">
+                            
+                        </a>
+                        <div>
+                            <h4 class="sidebar-post-title">
+                                <a href="/notebook-bom-para-estudar-o-guia-completo-para-acertar-na-escolha/" style="color: var(--text-main); transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">Notebook bom para estudar: o guia completo para acertar na escolha</a>
+                            </h4>
+                            <span class="sidebar-post-date"><i class="bi bi-calendar3"></i> 03/09/2026</span>
+                        </div>
+                    </div>
+                
+                
+                
+                    <div class="sidebar-post">
+                        <a href="/onde-estudar-ti/">
+                            
+                            <img src="/static/uploads/onde-estudar-ti-thumb.webp?v=1788454310" alt="onde estudar ti ?" class="sidebar-post-img" loading="lazy">
+                            
+                        </a>
+                        <div>
+                            <h4 class="sidebar-post-title">
+                                <a href="/onde-estudar-ti/" style="color: var(--text-main); transition: color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-main)'">onde estudar ti ?</a>
+                            </h4>
+                            <span class="sidebar-post-date"><i class="bi bi-calendar3"></i> 03/09/2026</span>
+                        </div>
+                    </div>
+                
+                
+            </div>
+        </div>
+        
+    </aside>
+    
+</article>
+</main>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const botoesFeedback = document.querySelectorAll('.btn-feedback');
+    botoesFeedback.forEach(botao => {
+        botao.addEventListener('click', function() {
+            const container = this.closest('.feedback-container');
+            if (container) {
+                container.innerHTML = `
+                    <p style="color: var(--accent); font-weight: bold; margin-bottom: 8px;"><i class="bi bi-check-circle"></i> Obrigado pelo feedback!</p>
+                    <p style="color: var(--text-muted); margin-bottom: 0;">Usaremos as informações para melhorar nossos reviews de hardware.</p>
+                `;
+            }
+        });
+    });
+
+    // Amazon Carousel Navigation
+    document.body.addEventListener('click', function(e) {
+        const btnPrev = e.target.closest('.btn-carousel-prev');
+        if (btnPrev) {
+            const wrapper = btnPrev.closest('div[id^="carrossel-"]');
+            if (wrapper) {
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft <= 5) { track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: -scrollAmount, behavior: 'smooth' }); }
+                }
+            }
+            return;
+        }
+
+        const btnNext = e.target.closest('.btn-carousel-next');
+        if (btnNext) {
+            const wrapper = btnNext.closest('div[id^="carrossel-"]');
+            if (wrapper) {
+                const track = wrapper.querySelector('.dsc-track');
+                const item = track.querySelector('.dsc-item');
+                if (track && item) {
+                    const scrollAmount = item.offsetWidth + 20;
+                    if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 5) { track.scrollTo({ left: 0, behavior: 'smooth' }); } 
+                    else { track.scrollBy({ left: scrollAmount, behavior: 'smooth' }); }
+                }
+            }
+            return;
+        }
+    });
+});
+</script>
+
+<footer class="footer" style="background-color: #212529;">
+    <div class="container">
+        <div class="row text-md-start text-center mb-4">
+            <div class="col-md-4 mb-3">
+                
+                <h5 class="fw-bold" style="color: var(--text-main); font-family: var(--font-mono);">Brincando na Rede</h5>
+                
+                <p style="font-size: 0.9rem;">Um espaço dedicado a compartilhar ideias, artigos e tutoriais. Nossa missão é entregar conteúdo de valor e com qualidade para todos os nossos leitores.</p>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                
+                <h6 class="fw-bold text-uppercase mb-3" style="color: var(--accent);">Links Úteis</h6>
+                <ul class="list-unstyled" style="font-size: 0.9rem;">
+                    
+                        
+                        
+                        
+                        
+                    
+                </ul>
+            </div>
+            
+            <div class="col-md-4 mb-3">
+                <h6 class="fw-bold text-uppercase mb-3" style="color: var(--accent);">Redes Sociais</h6>
+                <div class="d-flex gap-3 justify-content-center justify-content-md-start">
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-top pt-4 border-secondary">
+            <p>@2026 - BR Websites</p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script>
+    // Script básico para animar entrada de elementos (opcional)
+    document.addEventListener("DOMContentLoaded", function() {
+        // Amazon Button Fixes if any
+    });
+</script>
+
+<!-- Bootstrap JS (Necessário para os blocos do CMS) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
+<ul id="menu-rodape" class="menu"><li id="menu-item-565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-565"><a href="https://brincandonarede.com.br/home-2/">Home</a></li>
+<li id="menu-item-566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="https://brincandonarede.com.br/contato/">Contato</a></li>
+<li id="menu-item-567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-567"><a href="https://brincandonarede.com.br/politica-de-privacidade/">Política de Privacidade</a></li>
+<li id="menu-item-568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-568"><a href="https://brincandonarede.com.br/termos-de-uso/">Termos de Uso</a></li>
+</ul>
+</body>
+</html>
